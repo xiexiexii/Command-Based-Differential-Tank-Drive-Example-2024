@@ -46,8 +46,8 @@ public class DriveSubsystem extends SubsystemBase {
 
     // Reversed! Controller, Turn, Drive. Not the other way around! Negative sign is to compensate for joystick inverts
     m_dT.arcadeDrive(
-      -driveController.getRawAxis(XboxController.Axis.kRightX.value) * turnSpeed, 
-      -driveController.getRawAxis(XboxController.Axis.kLeftY.value) * driveSpeed
+      driveController.getRawAxis(XboxController.Axis.kRightX.value) * turnSpeed, 
+      driveController.getRawAxis(XboxController.Axis.kLeftY.value) * driveSpeed
     );
   }
 
@@ -57,7 +57,7 @@ public class DriveSubsystem extends SubsystemBase {
     // Negative sign is to compensate for joystick inverts
     m_dT.tankDrive(
       -driveController.getRawAxis(XboxController.Axis.kLeftY.value) * driveSpeed, 
-      -driveController.getRawAxis(XboxController.Axis.kRightY.value) * driveSpeed
+      driveController.getRawAxis(XboxController.Axis.kRightY.value) * driveSpeed
     );
   }
 }

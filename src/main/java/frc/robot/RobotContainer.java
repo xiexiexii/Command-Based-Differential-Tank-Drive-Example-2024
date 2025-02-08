@@ -28,7 +28,7 @@ public class RobotContainer {
   public RobotContainer() {
 
     // Sets the drive command as the default command
-    m_driveSubsystem.setDefaultCommand(m_arcadeDefault);
+    m_driveSubsystem.setDefaultCommand(m_tankDefault);
 
     // Binds buttons to commands
     configureButtonBindings();
