@@ -41,13 +41,23 @@ public class DriveSubsystem extends SubsystemBase {
   public void periodic() {
   }
 
-  // Drive command
-  public void drive(CommandXboxController driveController, double driveSpeed, double turnSpeed) {
+  // Arcade Drive: Left Stick Drive, Right Stick Turn
+  public void arcadeDrive(CommandXboxController driveController, double driveSpeed, double turnSpeed) {
 
     // Reversed! Controller, Turn, Drive. Not the other way around! Negative sign is to compensate for joystick inverts
     m_dT.arcadeDrive(
       -driveController.getRawAxis(XboxController.Axis.kRightX.value) * turnSpeed, 
       -driveController.getRawAxis(XboxController.Axis.kLeftY.value) * driveSpeed
+    );
+  }
+
+  // Tank Drive: Left Stick Left Drive, Right Stick Right Drive
+  public void tankDrive(CommandXboxController driveController, double driveSpeed) {
+
+    // Negative sign is to compensate for joystick inverts
+    m_dT.tankDrive(
+      -driveController.getRawAxis(XboxController.Axis.kLeftY.value) * driveSpeed, 
+      -driveController.getRawAxis(XboxController.Axis.kRightY.value) * driveSpeed
     );
   }
 }

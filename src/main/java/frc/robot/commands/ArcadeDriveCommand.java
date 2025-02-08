@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.subsystems.DriveSubsystem;
 
 // Arcade Drive Command!
-public class ArcadeDrive extends Command {
+public class ArcadeDriveCommand extends Command {
   
   // Init stuff
   private DriveSubsystem m_driveSubsystem;
@@ -14,7 +14,7 @@ public class ArcadeDrive extends Command {
   private double m_turnSpeed;
 
   // Constructor
-  public ArcadeDrive(DriveSubsystem driveSubsystem, double driveSpeed, double turnSpeed, CommandXboxController driveController) {
+  public ArcadeDriveCommand(DriveSubsystem driveSubsystem, double driveSpeed, double turnSpeed, CommandXboxController driveController) {
 
     // Requirements equal to subsystem
     m_driveSubsystem = driveSubsystem;
@@ -32,7 +32,7 @@ public class ArcadeDrive extends Command {
 
   // Runs periodically
   public void execute() {
-    m_driveSubsystem.drive(m_driveController, m_turnSpeed, m_driveSpeed);
+    m_driveSubsystem.arcadeDrive(m_driveController, m_turnSpeed, m_driveSpeed);
   }
 
   // We done yet?

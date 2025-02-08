@@ -1,10 +1,14 @@
 package frc.robot;
 
+import edu.wpi.first.wpilibj.XboxController;
+
 public class Constants {
   
   // Drive stuff
   public class DriverConstants {
     public static final int k_driverControllerPort = 0;
+
+    public static final int k_startButtonID = XboxController.Button.kStart.value;
   }  
   
   // CAN IDs
